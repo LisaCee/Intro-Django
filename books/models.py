@@ -8,7 +8,12 @@ class Books(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 50)
     author = models.CharField(max_length = 50)
+    year_pub = models.IntegerField(default=2018)    
     date = models.DateTimeField(auto_now=True)
     rating = models.IntegerField(default=3,
             validators=[MaxValueValidator(5),
             MinValueValidator(0)])
+
+class PersonalBooks(Books):
+    genre = models.CharField(max_length = 20)
+    format = models.CharField(max_length = 50, default="Hardcover Book")
