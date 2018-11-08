@@ -9,7 +9,8 @@ class Books(models.Model):
     title = models.CharField(max_length = 50)
     author = models.CharField(max_length = 50)
     year_pub = models.IntegerField(default=2018)    
-    date = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
     rating = models.IntegerField(default=3,
             validators=[MaxValueValidator(5),
             MinValueValidator(0)])
