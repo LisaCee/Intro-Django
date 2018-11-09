@@ -1,10 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 from uuid import uuid4
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
-class Books(models.Model):
+class Reviewer(models.Model):
+    id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  #models.OneToOne
+    dob = models.DateField(auto_now=False, blank=True)
+
+class Media(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 50)
     author = models.CharField(max_length = 50)
@@ -15,6 +21,14 @@ class Books(models.Model):
             validators=[MaxValueValidator(5),
             MinValueValidator(0)])
 
-class PersonalBooks(Books):
+class Book(Media):
     genre = models.CharField(max_length = 20)
     format = models.CharField(max_length = 50, default="Hardcover Book")
+
+class Music(Media):
+    genre = models.CharField(max_length = 20)
+    format = models.CharField(max_length = 50, default="MP3")    
+
+class Movie(Media):
+    genre = models.CharField(max_length = 20)
+    format = models.CharField(max_length = 50, default="Blu-ray")        
