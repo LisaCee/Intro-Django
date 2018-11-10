@@ -14,7 +14,7 @@ class Reviewer(models.Model):
     
 class Media(models.Model):
     type = models.CharField(max_length = 50, blank=True)
-    reviewer = models.ForeignKey(Reviewer, on_delete=models.CASCADE) 
+    user = models.ForeignKey(Reviewer, on_delete=models.CASCADE) 
     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 50)
     artist = models.CharField(max_length = 50)
@@ -30,7 +30,6 @@ class Book(Media):
 
 class Music(Media):
     format = models.CharField(max_length = 50, default="MP3")    
-    
 
 class Movie(Media):
     format = models.CharField(max_length = 50, default="Blu-ray")     
