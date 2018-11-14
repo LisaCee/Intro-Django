@@ -9,6 +9,8 @@ class Reviewer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     #models.OneToOne
     dob = models.DateField(auto_now=False, blank=True)
+    def __str__(self):
+        return self.user.username;
     def reviewed_by(self) :
         return self.reviewer.user.user
     
