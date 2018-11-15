@@ -22,6 +22,8 @@ class BookViewSet( viewsets.ModelViewSet) :
 
         if current_user.is_anonymous:
             return Book.objects.none()
+        elif current_user.is_superuser:
+            return Book.objects.all()
         else:
             current_user = self.request.user
             current_reviewer = Reviewer.objects.get(user = current_user)
