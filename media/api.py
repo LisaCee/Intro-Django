@@ -15,5 +15,14 @@ class BookSerializer( serializers.HyperlinkedModelSerializer):
 class BookViewSet( viewsets.ModelViewSet) :        
     serializer_class = BookSerializer
     #filter by user
-    queryset = Book.objects.all()
+    queryset = Book.objects.none()
     # queryset.Book.objects.filter(...)
+    def get_queryset(self):
+        current_user = self.request.user
+
+        if current_user.is_anonymous:
+            return Book.objects.none()
+        else:
+            current_user = self.request.user
+            current_reviewer = Reviewer.objects.get(user = current_user)
+            return Book.objects.filter(reviewer = current_reviewer)    
