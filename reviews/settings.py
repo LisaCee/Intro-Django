@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-import SessionAuthentication, BasicAuthentication, TokenAuthentication from rest_framework.authentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication 
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
