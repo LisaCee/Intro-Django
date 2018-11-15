@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Media, Book, Music, Movie, Reviewer
 # Register your models here.
 class MediaAdmin(admin.ModelAdmin):
-	list_display = ('title', 'artist', 'year_pub', 'rating', 'type')
+	list_display = ('title', 'artist', 'year_pub', 'rating')
 	readonly_fields=('created_at', 'last_modified')
 
 class BookAdmin(admin.ModelAdmin):

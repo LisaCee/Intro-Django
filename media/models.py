@@ -15,8 +15,8 @@ class Reviewer(models.Model):
         return self.reviewer.user.user
     
 class Media(models.Model):
-    type = models.CharField(max_length = 50, blank=True)
-    user = models.ForeignKey(Reviewer, on_delete=models.CASCADE) 
+    # type = models.CharField(max_length = 50, blank=True)
+    reviewer = models.ForeignKey(Reviewer, on_delete=models.CASCADE) 
     id = models.UUIDField(primary_key = True, default = uuid4, editable = False)
     title = models.CharField(max_length = 50)
     artist = models.CharField(max_length = 50)
