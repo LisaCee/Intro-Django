@@ -1,4 +1,5 @@
 heroku deploy: https://dashboard.heroku.com/apps/lambda-reviews/access
+https://lambda-reviews.herokuapp.com/
 django repo: https://github.com/LisaCee/Intro-Django
 
 
