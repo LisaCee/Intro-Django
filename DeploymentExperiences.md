@@ -2,7 +2,8 @@
   - What went well?
   - What challenges did you face? 
     update heroku / reinstall 
-
+    -database_url
+    
   - How far did you get?
 - We have utilized docs from several different projects over the course of this Sprint.
   - Which docs did you think were the most helpful? 
