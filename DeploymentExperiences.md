@@ -1,3 +1,7 @@
+heroku deploy: https://dashboard.heroku.com/apps/lambda-reviews/access
+django repo: https://github.com/LisaCee/Intro-Django
+
+
 - Summarize the key steps in the deployment process. 
   - What went well?
     My project deployed to Heroku on my first attempt.  I took time with this sprint-challenge to really read through the instructions before I tried to implement them.  I think this lead to a more smooth deploy than I would have had if I had just jumped in and started installing new dependencies.  
