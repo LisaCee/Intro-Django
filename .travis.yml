@@ -1,7 +1,7 @@
 language: python
 
 install:
-  - pip install -r requirements.txt
+  - pipenv install -r requirements.txt
 # before_install:
 #   - chmod +x gradlew
 # command to run tests
