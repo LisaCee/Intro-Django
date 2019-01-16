@@ -2,8 +2,8 @@ language: python
 
 install:
   - pip install -r requirements.txt
-before_install:
-  - chmod +x gradlew
+# before_install:
+#   - chmod +x gradlew
 # command to run tests
 script:
    - python -m unittest test_module.py 
